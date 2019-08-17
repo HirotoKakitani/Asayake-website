@@ -1,0 +1,17 @@
+#content-cont{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+#carousel-cont{
+    flex:1;
+}
+#splash-text{
+    flex:1;
+    background-color:blue;
+}
+/*for img in carousel, styling slotted doesnt work for some reason??*/
+asayake-carousel > img{
+    margin:0 auto;
+
+}
