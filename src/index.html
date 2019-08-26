@@ -1,3 +1,11 @@
+<!--
+    TODO
+    * have footer outsoude of content-cont -> place footer at bottom of the page. 
+    * have cards take up all available vertical height.
+    * style the footer 
+    * center carousel image, with blurred image behind.
+    * Add more dummy content to cards
+-->
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -21,7 +29,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <nav>
-            <img id="logo" src="https://picsum.photos/64/64" alt="Logo did not load." srcset="">
+            <img id="logo" src="../res/icons/asayake_logo.png" alt="Logo did not load." srcset="">
             <ul class="nav-list" id="main-nav">
                 <li class="nav-item"><a href="#">Home</a></li>
                 <li class="nav-item"><a href="#">About</a></li>
@@ -30,22 +38,48 @@
                 <li class="nav-item"><a href="#">Roster</a></li>
                 <li class="nav-item"><a href="#">Booking/Donate</a></li>
             </ul>
-            <span id="navbar-toggle"><i id=navbar-icon>(ham-icon)</i></span>
+            <span id="navbar-toggle"><span id="navbar-icon"></span></span>
         </nav>
         <div id="content-cont">
             <div id="carousel-cont">
                 <asayake-carousel>
-                    <img class="active" src="https://picsum.photos/1200/750" alt="Bad img">
-                    <img src="http://lorempixel.com/1200/750/" alt="Bad img">
-                    <img src="http://lorempixel.com/1000/700/" alt="Bad img">
-                    <img src="http://lorempixel.com/900/700/" alt="Bad img">
-                    <img src="http://lorempixel.com/800/750/" alt="Bad img">
+                    <img class="active" src="../res/photos/carousel_7.JPG" alt="Bad img">
+                    <img src="../res/photos/carousel_4.JPG" alt="Bad img">
+                    <img src="../res/photos/carousel_6.JPG" alt="Bad img">
+                    <img src="../res/photos/carousel_10.JPG" alt="Bad img">
+                    <img src="../res/photos/carousel_2.JPG" alt="Bad img">
+                    
                 </asayake-carousel>
             </div>
-            <div id="splash-text">
-                (splash-text)
-            </div>    
+            <div id="text-cont">
+                <section id="asa-description" class="asayake-block">
+                    <h1>Asayake Taiko</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi. Duis at tellus at urna condimentum mattis. Enim diam vulputate ut pharetra sit amet aliquam id diam. Turpis egestas sed tempus urna. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Porttitor massa id neque aliquam. Massa tincidunt dui ut ornare lectus. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Varius duis at consectetur lorem donec. Etiam sit amet nisl purus in mollis nunc sed id. Tincidunt eget nullam non nisi est sit. Quam quisque id diam vel quam elementum. Justo nec ultrices dui sapien eget mi proin sed.
+                    </p>
+                </section>
+                <div id="grid-cont">
+                    <div class="asayake-block">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="asayake-block">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="asayake-block">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+                
+            </div> 
         </div>
-        
+        <footer>
+            <div id="icon-cont">
+                <span id="instagram-icon"></span>
+                <span id="facebook-icon"></span>
+                <span id="youtube-icon"></span>    
+            </div>
+            <div id="attribution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        </footer> 
+  
     </body>
 </html>

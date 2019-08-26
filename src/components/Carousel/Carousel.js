@@ -5,20 +5,25 @@ template.innerHTML =
   :host{
     position:relative;
     overflow:hidden;
+    height:100%;
   }
   #imgCont{
-    border: 1px black solid; 
-    position:relative;
-    margin:0px;
+    -position:absolute;
+    position: relative;
     padding:0px;
-    overflow:hidden;
-
+    height:100%;
+    -display:flex;
+    -display:table;
   }
   ::slotted(.active){
     display:block;
   }
   ::slotted(img){
     display:none;
+    height:auto;
+    width:100%;
+    -margin:0 auto;
+
     box-sizing: content-box;    
   }
 
@@ -30,29 +35,38 @@ template.innerHTML =
     opacity:0.4;
     width:30px;    
   }
+
   button:hover{
     opacity: 0.7;
   }
+
+  #button-cont{
+    position:absolute;
+    top:0;
+  }
+
   #backButton{
     left:0px;
   }
-
   #forwardButton{
     right:0px;
   }
 </style>
 <div id="imgCont">
+  <slot>This is a carousel</slot>
+
+</div>
+<div id="button-cont">
   <button id="backButton"></button>
   <button id="forwardButton"></button>
-  <slot>This is a carousel</slot>
 </div>
-`;
 
+`;
 /**
  * TODOs
  * Animated transitions
- * Entire element expands if image dimentions are different.
  * Add blurred background for undersized images
+ * buttons in imgCont will make it full size
  */
 
 class Carousel extends HTMLElement {
@@ -94,6 +108,11 @@ class Carousel extends HTMLElement {
         }
       };
     });
+  }
+  getActiveUrl(){
+    let active = this.shadowRoot.querySelector("img.active").src;
+    console.log("getActiveUrl: ", active);
+    return src;
   }
 }
 
