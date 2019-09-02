@@ -1,67 +1,3 @@
-const template = document.createElement('template');
-template.innerHTML = 
-`
-  <style>
-  :host{
-    position:relative;
-    overflow:hidden;
-    height:100%;
-  }
-  #imgCont{
-    -position:absolute;
-    position: relative;
-    padding:0px;
-    height:100%;
-    -display:flex;
-    -display:table;
-  }
-  ::slotted(.active){
-    display:block;
-  }
-  ::slotted(img){
-    display:none;
-    height:auto;
-    width:100%;
-    -margin:0 auto;
-
-    box-sizing: content-box;    
-  }
-
-  button{
-    position:absolute;
-    top:0px;
-    z-index:2;
-    height:100%;
-    opacity:0.4;
-    width:30px;    
-  }
-
-  button:hover{
-    opacity: 0.7;
-  }
-
-  #button-cont{
-    position:absolute;
-    top:0;
-  }
-
-  #backButton{
-    left:0px;
-  }
-  #forwardButton{
-    right:0px;
-  }
-</style>
-<div id="imgCont">
-  <slot>This is a carousel</slot>
-
-</div>
-<div id="button-cont">
-  <button id="backButton"></button>
-  <button id="forwardButton"></button>
-</div>
-
-`;
 /**
  * TODOs
  * Animated transitions
@@ -72,45 +8,81 @@ template.innerHTML =
 class Carousel extends HTMLElement {
   constructor() {
     super();  
+    const template = document.createElement('template');
+    template.innerHTML = 
+    `
+      <style>
+      :host{
+        overflow:hidden;
+        height:100%;
+      }
+      #imgCont{
+        position: relative;
+        padding:0px;
+        height:40vh;
+        background-color:black;
+        background-image:url(../../res/photos/carousel_2.JPG);
+        -background-image: linear-gradient(45deg, rgb(112, 3, 3), black);
+        background-size:cover;
+      }
+      ::slotted(.active){
+          opacity:1;
+      }
+      ::slotted(img){
+        opacity:0;
+        position: absolute;
+        max-height:100%;
+        transition: opacity 1s ease-in-out;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        box-sizing: content-box;  
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 8px 8px black inset;
 
+      }
+      @media screen and (min-width: 768px) {
+        #imgCont{
+          height:80vh;
+        }
+      }
+    </style>
+    <div id="imgCont">
+      <slot>This is a carousel</slot>
+    </div>
+    `;
     //creates shadow root
     var shadow = this.attachShadow({mode:'open'});
     shadow.appendChild(template.content.cloneNode(true));
     
-    this.shadowRoot.getElementById("backButton").addEventListener("click", ()=>{
-      for(let index=0; index < this.children.length; index++){
-        let el = this.children.item(index);
-        if (el.className == "active"){
-          el.classList.toggle("active");
-          if(index == 0){
-            this.children[this.children.length-1].classList.toggle("active");
-          }
-          else{
-            this.children[index-1].classList.toggle("active");
-          }
-          break;
-        }
-      };
-    });
-
-    this.shadowRoot.getElementById("forwardButton").addEventListener("click", ()=>{
-      for(let index=0; index < this.children.length; index++){
-        let el = this.children.item(index);
-        if (el.className == "active"){
-          el.classList.toggle("active");
-          if(index == this.children.length-1){
-            this.children[0].classList.toggle("active");
-          }
-          else{
-            this.children[index+1].classList.toggle("active");
-          }
-          break;
-        }
-      };
-    });
+    //repeatedly calls changeImage every 7 secs
+    setInterval(()=>{this.changeImage()}, 4000);
   }
+  changeImage(){
+    for(let index=0; index < this.children.length; index++){
+      let el = this.children.item(index);
+      if (el.className == "active"){
+        el.classList.toggle("active");
+        //console.log(this.shadowRoot.querySelector("#imgCont").style);
+        let newActive;
+        if(index == this.children.length-1){
+          newActive = this.children[0];
+        }
+        else{
+          newActive = this.children[index+1];
+        }
+        newActive.classList.toggle("active");
+        console.log(newActive.src);
+        //window.getComputedStyle(this.shadowRoot.querySelector("#imgCont")).backgroundImage = `url(${newActive.src})`;
+        break;
+      }
+    }
+  }
+
   getActiveUrl(){
-    let active = this.shadowRoot.querySelector("img.active").src;
+    let active = window.getComputedStyle(this.shadowRoot.querySelector(".active"));
     console.log("getActiveUrl: ", active);
     return src;
   }

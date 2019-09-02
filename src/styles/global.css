@@ -72,7 +72,8 @@ nav{
 footer{
     -flex:1;
     flex-shrink: 0;
-    background-color: rgb(61, 55, 55);
+    background-color: rgb(154, 151, 151);
+    -background-color: rgb(61, 55, 55);
     color:white;
     display:flex;
     flex-direction:column;
@@ -86,20 +87,20 @@ footer span{
     display:inline-block;
     margin: 5px;
     border-radius:.5em;
-    background-color:white;
+    -background-color:white;
 }
 #icon-cont{
     -display: inline-block;
 }
 #instagram-icon{
-    background-image: url("/../res/icons/instagram.png");
+    background-image: url("/../res/icons/icons8-instagram-50.png");
 
 }
 #facebook-icon{
-    background-image: url("../../res/icons/facebook.png");
+    background-image: url("../../res/icons/icons8-facebook-50.png");
 }
 #youtube-icon{
-    background-image: url("../../res/icons/youtube.png");
+    background-image: url("../../res/icons/icons8-play-button-50.png");
 
 }
 
