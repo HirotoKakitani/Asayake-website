@@ -1,7 +1,5 @@
 #member-grid{
-    -flex:8;
-    height:100vh;
+    flex-grow:1;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    background-color: 
 }

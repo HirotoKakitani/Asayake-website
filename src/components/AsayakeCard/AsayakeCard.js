@@ -1,9 +1,6 @@
 
 
-class MemberCard extends HTMLElement {
-  static get observedAttributes() {
-    return ['norm-image','alt-image','mem-name'];
-  }
+class AsayakeCard extends HTMLElement {
   constructor() {
     super();
     const template = document.createElement('template');
@@ -11,34 +8,53 @@ class MemberCard extends HTMLElement {
     var imageHeight = 0;
     template.innerHTML = `
     <style>
-    ::slotted(#imageCont){
+    :host{
+      display:block;
+      border: 1px solid red;
+    }
+    #image-cont{
       position:relative;
-      display: block;
+      display: inline-block;
+      -box-sizing: border-box;
+      -margin: 5px;
+      border: 2px solid black;
+
     }
     ::slotted(img) {
-      position:absolute;
-      -left:0;
+      width:20vw;
       -webkit-transition: opacity 1s ease-in-out;
       -moz-transition: opacity 1s ease-in-out;
       -o-transition: opacity 1s ease-in-out;
       transition: opacity 1s ease-in-out; 
+      margin:0;
     }
+
+    ::slotted(img.top){
+      position:absolute;
+      -left:0;
+      z-index:1;
+    }
+
     ::slotted(img.top:hover){
       opacity : 0;
     }
     
-    ::slotted(p){
+    ::slotted(span){
       color: white;
       z-index: 1;
-      position: absolute; 
+      display:block;
+      text-align:center;
+      margin:0;
+      width:20vw;
       background: rgb(0, 0, 0); /* fallback color */
       background: rgba(0, 0, 0, 0.7);
     }
+
     </style>
-      <div id = "imageCont">
+      <div id = "image-cont">
+        <slot class="top" name="memberImage">No Image</slot>
+        <slot  name="altImage">No Alt Image</slot>
         <slot name="memberName"> No Name</slot>
-        <slot name="altImage">No Alt Image</slot>
-        <slot name="memberImage">No Image</slot>
       </div>
      
     `;
@@ -99,7 +115,7 @@ class MemberCard extends HTMLElement {
 
 //export default MemberCard;
 
-if (!window.customElements.get('member-card')) {
-  window.MemberCard = MemberCard;
-  window.customElements.define('member-card', MemberCard);
+if (!window.customElements.get('asayake-card')) {
+  window.AsayakeCard = AsayakeCard;
+  window.customElements.define('asayake-card', AsayakeCard);
 }
