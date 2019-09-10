@@ -1,14 +1,16 @@
-const template = document.createElement('template');
-var imageWidth = 0;
-var imageHeight = 0;
-template.innerHTML = `
-  <div id = "imageCont">
-    <slot name="memberName"> No Name</slot>
-    <slot name="altImage">No Alt Image</slot>
-    <slot name="memberImage">No Image</slot>
-  </div>
-  <!--<h1>${imageWidth} ${imageHeight}</h1>-->
-  <style>
+
+
+class MemberCard extends HTMLElement {
+  static get observedAttributes() {
+    return ['norm-image','alt-image','mem-name'];
+  }
+  constructor() {
+    super();
+    const template = document.createElement('template');
+    var imageWidth = 0;
+    var imageHeight = 0;
+    template.innerHTML = `
+    <style>
     ::slotted(#imageCont){
       position:relative;
       display: block;
@@ -24,7 +26,7 @@ template.innerHTML = `
     ::slotted(img.top:hover){
       opacity : 0;
     }
-
+    
     ::slotted(p){
       color: white;
       z-index: 1;
@@ -32,16 +34,14 @@ template.innerHTML = `
       background: rgb(0, 0, 0); /* fallback color */
       background: rgba(0, 0, 0, 0.7);
     }
-  </style>
-`;
-
-class MemberCard extends HTMLElement {
-  static get observedAttributes() {
-    return ['norm-image','alt-image','mem-name'];
-  }
-  constructor() {
-    super();
-
+    </style>
+      <div id = "imageCont">
+        <slot name="memberName"> No Name</slot>
+        <slot name="altImage">No Alt Image</slot>
+        <slot name="memberImage">No Image</slot>
+      </div>
+     
+    `;
     //TODO flip the image when hovering over 
     this.addEventListener('mouseover',function flipImage(){
       console.log('Image Flip!');

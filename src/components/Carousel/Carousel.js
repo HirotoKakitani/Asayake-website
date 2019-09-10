@@ -20,15 +20,22 @@ class Carousel extends HTMLElement {
         position: relative;
         padding:0px;
         height:40vh;
+      }
+      #background{
+        position:absolute;
+        width:100%;
+        height:100%;
         background-color:black;
-        background-image:url(../../res/photos/carousel_2.JPG);
+        background-image:url(../../res/photos/carousel_12.JPG);
         -background-image: linear-gradient(45deg, rgb(112, 3, 3), black);
         background-size:cover;
+        filter:grayscale(100%);
       }
       ::slotted(.active){
           opacity:1;
       }
       ::slotted(img){
+        z-index: 1;
         opacity:0;
         position: absolute;
         max-height:100%;
@@ -41,6 +48,8 @@ class Carousel extends HTMLElement {
         left:50%;
         transform: translate(-50%, -50%);
         box-shadow: 0 0 8px 8px black inset;
+        box-sizing: border-box;
+
 
       }
       @media screen and (min-width: 768px) {
@@ -50,6 +59,7 @@ class Carousel extends HTMLElement {
       }
     </style>
     <div id="imgCont">
+      <div id="background"></div>
       <slot>This is a carousel</slot>
     </div>
     `;
