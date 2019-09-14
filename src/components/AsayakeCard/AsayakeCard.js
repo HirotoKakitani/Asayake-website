@@ -9,8 +9,9 @@ class AsayakeCard extends HTMLElement {
     template.innerHTML = `
     <style>
     :host{
-      display:block;
-      border: 1px solid red;
+      display: flex; 
+      justify-content: center;
+       
     }
     #image-cont{
       position:relative;
@@ -18,15 +19,21 @@ class AsayakeCard extends HTMLElement {
       -box-sizing: border-box;
       -margin: 5px;
       border: 2px solid black;
+      margin:4px;
 
+      background: rgb(80, 80, 80);
     }
     ::slotted(img) {
-      width:20vw;
+      -width:20vw;
+      width:100%;
+      height:auto;
       -webkit-transition: opacity 1s ease-in-out;
       -moz-transition: opacity 1s ease-in-out;
       -o-transition: opacity 1s ease-in-out;
       transition: opacity 1s ease-in-out; 
       margin:0;
+      border-bottom: 2px solid black;
+
     }
 
     ::slotted(img.top){
@@ -44,10 +51,7 @@ class AsayakeCard extends HTMLElement {
       z-index: 1;
       display:block;
       text-align:center;
-      margin:0;
-      width:20vw;
-      background: rgb(0, 0, 0); /* fallback color */
-      background: rgba(0, 0, 0, 0.7);
+      width:100%;
     }
 
     </style>

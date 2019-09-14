@@ -3,3 +3,12 @@
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+
+/*sets navbar styling when threshold reaches monitor size*/
+@media screen and (min-width: 720px) {
+    #member-grid{
+        flex-grow:1;
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(720px, 1fr));
+    }
+}
