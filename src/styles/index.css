@@ -1,9 +1,7 @@
 
 #carousel-cont{
     flex:1;
-    -min-height:30vh;
     height:30vh;
-    -height: 100%;
     overflow:hidden;
 }
 

@@ -4,8 +4,6 @@ class AsayakeCard extends HTMLElement {
   constructor() {
     super();
     const template = document.createElement('template');
-    var imageWidth = 0;
-    var imageHeight = 0;
     template.innerHTML = `
     <style>
     :host{
@@ -16,8 +14,6 @@ class AsayakeCard extends HTMLElement {
     #image-cont{
       position:relative;
       display: inline-block;
-      -box-sizing: border-box;
-      -margin: 5px;
       border: 2px solid black;
       margin:4px;
 
@@ -62,26 +58,11 @@ class AsayakeCard extends HTMLElement {
       </div>
      
     `;
-    //TODO flip the image when hovering over 
-    this.addEventListener('mouseover',function flipImage(){
-      console.log('Image Flip!');
-    });
-    //TODO show modal info window when clicked
-    this.addEventListener('click',function showInfo(){
-      console.log('Showing info!');
-    });
-
     //creates shadow root
     var shadow = this.attachShadow({mode:'open'});
     shadow.appendChild(template.content.cloneNode(true));
   }
-  /*
-  connectedCallback() {
-    this.textContent = ':wave:';
-  }
 
-  disconnectedCallback() {};
-  */
   attributeChangedCallback(attrName, oldVal, newVal) {
     // 'norm-image','alt-image','mem-name'
     console.log(attrName);

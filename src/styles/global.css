@@ -12,6 +12,8 @@ body{
     position:relative;
     display: flex;
     flex-direction:column;
+    background-color:  rgb(204, 204, 204);
+
 }
 
 nav{
@@ -96,7 +98,6 @@ footer span{
 }
 
 #attribution{
-    -display:inline-block;
     font-size: .75em;
 }
 
