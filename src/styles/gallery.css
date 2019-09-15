@@ -1,46 +1,40 @@
-
 #grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-auto-rows: 200px;
-    grid-gap: 1rem;
-    grid-auto-flow:  dense;
-    padding: 10px;
+    display:flex;
+    flex-direction:column;
 }
 
 img{
+    margin:5px;
     width:100%;
-    height:100%;
-    object-fit: cover;
-    grid-column: span 1;
-    grid-row:span 1;
-}
-img:nth-child(4n){
-    grid-column: span 2;
-    grid-row: span 2;
-}
-img:nth-child(8n){
-    grid-column: span 3;
-    grid-row: span 3;
+    height:auto;
+    flex:1;
 }
 
 
-/*sets navbar styling when threshold reaches monitor size*/
-/*
 @media screen and (min-width: 720px) {
-    #grid{
-        flex-grow:1;
-        display:grid;
-        grid-template-columns: repeat(auto-fit, minmax(720px, 1fr));
-    }
 
-    #grid:nth-child(4n){
+    #grid{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-auto-rows: 200px;
+        grid-gap: 1rem;
+        grid-auto-flow:  dense;
+        margin: 10px;
+    }
+    
+    img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        grid-column: span 1;
+        grid-row:span 1;
+    }
+    img:nth-child(4n){
         grid-column: span 2;
         grid-row: span 2;
     }
-    #grid:nth-child(8n){
+    img:nth-child(8n){
         grid-column: span 3;
         grid-row: span 3;
-    }    
+    }
 }
-*/
