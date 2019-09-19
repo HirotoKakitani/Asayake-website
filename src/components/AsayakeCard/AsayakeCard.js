@@ -8,19 +8,17 @@ class AsayakeCard extends HTMLElement {
     <style>
     :host{
       display: flex; 
-      justify-content: center;
-       
+      justify-content: center;  
     }
+
     #image-cont{
       position:relative;
       display: inline-block;
       border: 2px solid black;
       margin:4px;
-
       background: rgb(80, 80, 80);
     }
-    ::slotted(img) {
-      -width:20vw;
+    #image-cont ::slotted(img) {
       width:100%;
       height:auto;
       -webkit-transition: opacity 1s ease-in-out;
@@ -32,17 +30,16 @@ class AsayakeCard extends HTMLElement {
 
     }
 
-    ::slotted(img.top){
+    #image-cont  ::slotted(img.top){
       position:absolute;
-      -left:0;
       z-index:1;
     }
 
-    ::slotted(img.top:hover){
+    #image-cont  ::slotted(img.top:hover){
       opacity : 0;
     }
     
-    ::slotted(span){
+    #image-cont ::slotted(span){
       color: white;
       z-index: 1;
       display:block;
@@ -57,11 +54,8 @@ class AsayakeCard extends HTMLElement {
     }
 
     #info-modal{
-      z-index:999;
-      background-color: white;
-
       left: 33%;
-      -margin: -250px 0 0 -32%;
+      z-index:30;
       position: fixed;
       top: 50%;
       width: 33%;
@@ -70,6 +64,25 @@ class AsayakeCard extends HTMLElement {
       transition: all .4s ease-in-out;
       -moz-transition: all .4s ease-in-out;
       -webkit-transition: all .4s ease-in-out
+      -o-transition: opacity all .4s ease-in-out;
+    }
+
+    #info-modal-content{
+      z-index:999;
+      position: fixed;
+      background-color: white;
+      width:33%;
+    }
+
+    #info-modal-overlay{
+      background-color: #000;
+      background: rgba(0,0,0,.8);
+      height: 100%;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 20
     }
 
 
@@ -80,7 +93,12 @@ class AsayakeCard extends HTMLElement {
       <slot name="memberName"> No Name</slot>
     </div>
     <div id="info-modal" class="inactive">
-      <p>hellow</p>
+      <div id="info-modal-content">
+        <slot name="introImage">No images</slot>
+        <slot name="introText">No text</slot>
+      </div>
+      <div id="info-modal-overlay">
+      </div>
     </div>
      
     `;
@@ -91,6 +109,10 @@ class AsayakeCard extends HTMLElement {
     this.addEventListener("click", ()=>{
       console.log("Card clicked, opening modal");
       this.shadowRoot.querySelector("#info-modal").classList.toggle("inactive");
+    });
+
+    this.addEventListener("mouseover", ()=>{
+
     });
   }
 
@@ -128,8 +150,6 @@ class AsayakeCard extends HTMLElement {
 
   }
 }
-
-//export default MemberCard;
 
 if (!window.customElements.get('asayake-card')) {
   window.AsayakeCard = AsayakeCard;
