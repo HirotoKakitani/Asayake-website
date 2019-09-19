@@ -51,20 +51,24 @@ class AsayakeCard extends HTMLElement {
     }
 
     .inactive{
-      opacity: 0;
-      visibility: hidden;
-      top: -50% !important;
+      -display:none;
     }
 
     #info-modal{
+      -position: fixed;
+      -top: 50%;
+      -left:50%;
       z-index:999;
-      background-color: white;
+      -border: 1px black solid;
+      -background-color: white;
 
-      left: 33%;
-      -margin: -250px 0 0 -32%;
+      left: 50%;
+      margin: -250px 0 0 -32%;
+      opacity: 0;
       position: fixed;
-      top: 50%;
-      width: 33%;
+      top: -50%;
+      visibility: hidden;
+      width: 65%;
       box-shadow: 0 3px 7px rgba(0,0,0,.25);
       box-sizing: border-box;
       transition: all .4s ease-in-out;
@@ -72,6 +76,11 @@ class AsayakeCard extends HTMLElement {
       -webkit-transition: all .4s ease-in-out
     }
 
+    #info-modal:target{
+      opacity: 1;
+      top: 50%;
+      visibility: visible
+    }
 
     </style>
     <div id = "image-cont">
@@ -90,7 +99,8 @@ class AsayakeCard extends HTMLElement {
 
     this.addEventListener("click", ()=>{
       console.log("Card clicked, opening modal");
-      this.shadowRoot.querySelector("#info-modal").classList.toggle("inactive");
+      //this.shadowRoot.querySelector("#info-modal").classList.toggle("inactive");
+      window.location.href="#info-modal";
     });
   }
 

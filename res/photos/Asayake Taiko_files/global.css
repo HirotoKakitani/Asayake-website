@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+html, body{
+    min-height:100%;
+}
+body{
+    position:relative;
+    display: flex;
+    flex-direction:column;
+    background-color:  rgb(204, 204, 204);
+
+}
+
+nav{
+    flex-shrink: 0;
+    padding:5px;
+    background-color:  rgb(112, 3, 3);
+}
+
+#logo{
+    height:64px;
+    width:64px;
+    border-radius: 1em;
+}
+
+.nav-list{
+    list-style-type: none;
+    display:none;
+}
+
+.nav-item{
+    height:100%;
+    text-align: center;
+    padding:5px;
+}
+
+.nav-item > a{
+    text-decoration: none;
+    color:white;
+}
+
+
+#navbar-toggle{
+    position:absolute;
+    top:20px;
+    right:20px;
+    cursor:pointer;
+    color:white;
+}
+
+#navbar-icon{
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background-image: url("../../res/icons/hamburger_menu.png");
+    background-size: contain;
+}
+
+.active{
+    display:block;
+}
+
+footer{
+    flex-shrink: 0;
+    background-color: rgb(154, 151, 151);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+footer span{
+    height:25px;
+    width:25px;
+    background-size: contain;
+    display:inline-block;
+    margin: 5px;
+    border-radius:.5em;
+}
+#icon-cont{
+    -display: inline-block;
+}
+#instagram-icon{
+    background-image: url("/../res/icons/icons8-instagram-50.png");
+
+}
+#facebook-icon{
+    background-image: url("../../res/icons/icons8-facebook-50.png");
+}
+#youtube-icon{
+    background-image: url("../../res/icons/icons8-play-button-50.png");
+
+}
+
+#attribution{
+    font-size: .75em;
+}
+
+/*sets navbar styling when threshold reaches monitor size*/
+@media screen and (min-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        align-items: center;
+    }
+    .nav-list {
+        display: flex;
+        margin-right: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .nav-item {
+        margin: 0;
+    }
+    .nav-item > a {
+        margin-left: 40px;
+    }
+    #navbar-toggle {
+       display: none;
+    }
+}

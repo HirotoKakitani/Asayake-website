@@ -1,0 +1,127 @@
+<!--
+    TODO
+    * have footer outsoude of content-cont -> place footer at bottom of the page. 
+    * have cards take up all available vertical height.
+    * style the footer 
+    * center carousel image, with blurred image behind.
+    * Add more dummy content to cards
+-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Asayake Taiko</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Asayake%20Taiko_files/global.css">
+        <link rel="stylesheet" href="Asayake%20Taiko_files/roster.css">
+
+        <script src="Asayake%20Taiko_files/AsayakeCard.js" content="text/javascript"></script>    
+        <script src="Asayake%20Taiko_files/global.js" async="" defer="defer" type="text/javascript"></script>
+        <script src="Asayake%20Taiko_files/index.js" type="text/javascript"></script>
+        </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav>
+            <a href="http://127.0.0.1:5500/src/index.html"><img id="logo" src="Asayake%20Taiko_files/asayake_logo.png" alt="Logo did not load." srcset=""></a>
+            <ul class="nav-list" id="main-nav">
+                <li class="nav-item"><a href="http://127.0.0.1:5500/src/index.html">Home</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="http://127.0.0.1:5500/src/gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="#">Media</a></li>
+                <li class="nav-item"><a href="#">Roster</a></li>
+                <li class="nav-item"><a href="#">Booking/Donate</a></li>
+            </ul>
+            <span id="navbar-toggle"><span id="navbar-icon"></span></span>
+        </nav>
+        <div id="member-grid">
+            <asayake-card>
+                <img slot="memberImage" class="top" src="Asayake%20Taiko_files/kana_normal.jfif">
+                <img slot="altImage" src="Asayake%20Taiko_files/kana_alt.jfif">
+                <span slot="memberName">Kana Okafuji</span>
+            </asayake-card>
+            <asayake-card>
+                <img slot="memberImage" class="top" src="Asayake%20Taiko_files/kana_normal.jfif">
+                <img slot="altImage" src="Asayake%20Taiko_files/kana_alt.jfif">
+                <span slot="memberName">Kana Okafuji</span>
+            </asayake-card>
+            <asayake-card>
+                <img slot="memberImage" class="top" src="Asayake%20Taiko_files/kana_normal.jfif">
+                <img slot="altImage" src="Asayake%20Taiko_files/kana_alt.jfif">
+                <span slot="memberName">Kana Okafuji</span>
+            </asayake-card>
+            <asayake-card>
+                <img slot="memberImage" class="top" src="Asayake%20Taiko_files/kana_normal.jfif">
+                <img slot="altImage" src="Asayake%20Taiko_files/kana_alt.jfif">
+                <span slot="memberName">Kana Okafuji</span>
+            </asayake-card>
+            <asayake-card>
+                <img slot="memberImage" class="top" src="Asayake%20Taiko_files/kana_normal.jfif">
+                <img slot="altImage" src="Asayake%20Taiko_files/kana_alt.jfif">
+                <span slot="memberName">Kana Okafuji</span>
+            </asayake-card>
+            <asayake-card>
+                <img slot="memberImage" class="top" src="Asayake%20Taiko_files/kana_normal.jfif">
+                <img slot="altImage" src="Asayake%20Taiko_files/kana_alt.jfif">
+                <span slot="memberName">Kana Okafuji</span>
+            </asayake-card>
+            <asayake-card>
+                <img slot="memberImage" class="top" src="Asayake%20Taiko_files/kana_normal.jfif">
+                <img slot="altImage" src="Asayake%20Taiko_files/kana_alt.jfif">
+                <span slot="memberName">Kana Okafuji</span>
+            </asayake-card>
+        </div>
+        <footer>
+            <div id="icon-cont">
+                <a href="https://www.instagram.com/asayake_taiko/"><span id="instagram-icon"></span></a>
+                <a href="https://www.facebook.com/AsayakeTaiko/"><span id="facebook-icon"></span></a>
+                <a href="https://www.youtube.com/user/AsayakeTaiko/"><span id="youtube-icon"></span></a> 
+            </div>
+        </footer> 
+  
+    <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
