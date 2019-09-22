@@ -4,4 +4,13 @@ window.onload = function(){
     navBarToggle.addEventListener("click",function(){
         navList.classList.toggle("active");
     });
+
+    setTimeout(showContent, 3000);
 } 
+
+function showContent(){
+    document.querySelector(".lds-circle").style.display = "none";
+    document.querySelector(".page-content").style.display = "block";
+    document.querySelector("body").style.backgroundColor = "#fff0d6";
+}
+

@@ -4,11 +4,31 @@
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+/*Children of slotted cannot be styled- style here*/
+asayake-card > div > h2 {
+    text-align:center;
+    color:rgb(30, 30, 30);
+}
+
+asayake-card > div > p {
+    font-size: 3vw;
+}
+
+asayake-card > div > h2{
+    font-size: 4vw;
+}
 /*sets navbar styling when threshold reaches monitor size*/
 @media screen and (min-width: 720px) {
     #member-grid{
         flex-grow:1;
         display:grid;
         grid-template-columns: repeat(auto-fit, minmax(720px, 1fr));
+    }
+    asayake-card > div > p {
+        font-size: 1vw;
+    }
+    
+    asayake-card > div > h2{
+        font-size: 2vw;
     }
 }

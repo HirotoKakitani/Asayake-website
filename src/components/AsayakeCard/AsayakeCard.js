@@ -17,6 +17,7 @@ class AsayakeCard extends HTMLElement {
       border: 2px solid black;
       margin:4px;
       background: rgb(80, 80, 80);
+      border-radius: .5em;
     }
     #image-cont ::slotted(img) {
       width:100%;
@@ -27,6 +28,8 @@ class AsayakeCard extends HTMLElement {
       transition: opacity 1s ease-in-out; 
       margin:0;
       border-bottom: 2px solid black;
+      border-top-left-radius: .5em;
+      border-top-right-radius: .5em;
 
     }
 
@@ -57,7 +60,7 @@ class AsayakeCard extends HTMLElement {
       left: 33%;
       z-index:30;
       position: fixed;
-      top: 50%;
+      top: 33%;
       width: 33%;
       box-shadow: 0 3px 7px rgba(0,0,0,.25);
       box-sizing: border-box;
@@ -70,8 +73,12 @@ class AsayakeCard extends HTMLElement {
     #info-modal-content{
       z-index:999;
       position: fixed;
-      background-color: white;
+      background-color: #fff0d6;
       width:33%;
+      height: 33%;
+      overflow-y: auto;
+      padding:2%;
+      border-radius: 0.5em; 
     }
 
     #info-modal-overlay{
@@ -84,8 +91,7 @@ class AsayakeCard extends HTMLElement {
       width: 100%;
       z-index: 20
     }
-
-
+    
     </style>
     <div id = "image-cont">
       <slot class="top" name="memberImage">No Image</slot>
