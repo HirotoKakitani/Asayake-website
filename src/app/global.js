@@ -5,12 +5,13 @@ window.onload = function(){
         navList.classList.toggle("active");
     });
 
-    setTimeout(showContent, 3000);
+    setTimeout(showContent, 2500);
 } 
 
 function showContent(){
     document.querySelector(".lds-circle").style.display = "none";
     document.querySelector(".page-content").style.display = "block";
-    document.querySelector("body").style.backgroundColor = "#fff0d6";
+    document.querySelector("body").style.backgroundColor = "white";
+    //#fff0d6
 }
 

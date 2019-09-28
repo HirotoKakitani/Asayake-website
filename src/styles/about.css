@@ -1,0 +1,6 @@
+section {
+    padding: 1%;
+}
+article:nth-child(even) {
+    background-color:red;
+}
