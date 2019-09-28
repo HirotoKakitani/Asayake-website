@@ -9,7 +9,7 @@ template.innerHTML = `
 #image-cont{
   position:relative;
   display: inline-block;
-  border: 2px solid black;
+  border: 1px solid black;
   margin:4px;
   background: rgb(80, 80, 80);
   border-radius: .5em;

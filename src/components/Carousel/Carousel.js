@@ -62,7 +62,7 @@ const template = document.createElement('template');
 
 window.ShadyCSS &&
 window.ShadyCSS.prepareTemplate(template, 'asayake-carousel');
-
+// polyfill cant handle ::slotted() by itself, needs to be a child of an element
 class Carousel extends HTMLElement {
   constructor() {
     super();  
