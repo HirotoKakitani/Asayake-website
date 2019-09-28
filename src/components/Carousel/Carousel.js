@@ -27,10 +27,10 @@ const template = document.createElement('template');
         background-size:cover;
         filter:grayscale(100%);
       }
-      ::slotted(.active){
+      #imgCont ::slotted(.active){
           opacity:1;
       }
-      ::slotted(img){
+      #imgCont ::slotted(img){
         z-index: 1;
         opacity:0;
         position: absolute;

@@ -1,6 +1,16 @@
-section {
+.about-section {
     padding: 1%;
+    height:33vh;
+
 }
-article:nth-child(even) {
-    background-color:red;
+.about-filler{
+    height:66vh;
+}
+
+#about-us, #some-heading{
+    background-color: rgb(167, 167, 167);
+}
+
+#history{
+    background-color: rgb(109, 0, 0);
 }
