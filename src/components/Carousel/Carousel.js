@@ -4,11 +4,7 @@
  * Add blurred background for undersized images
  * buttons in imgCont will make it full size
  */
-
-class Carousel extends HTMLElement {
-  constructor() {
-    super();  
-    const template = document.createElement('template');
+const template = document.createElement('template');
     template.innerHTML = 
     `
       <style>
@@ -63,6 +59,13 @@ class Carousel extends HTMLElement {
       <slot>This is a carousel</slot>
     </div>
     `;
+
+window.ShadyCSS &&
+window.ShadyCSS.prepareTemplate(template, 'asayake-carousel');
+
+class Carousel extends HTMLElement {
+  constructor() {
+    super();  
     //creates shadow root
     var shadow = this.attachShadow({mode:'open'});
     shadow.appendChild(template.content.cloneNode(true));
@@ -95,6 +98,15 @@ class Carousel extends HTMLElement {
     let active = window.getComputedStyle(this.shadowRoot.querySelector(".active"));
     console.log("getActiveUrl: ", active);
     return src;
+  }
+  
+  connectedCallback() {
+    // Let's give the polyfill a leg-up
+    window.ShadyCSS && window.ShadyCSS.styleElement(this)
+    if (!this.shadowRoot) {
+      this.attachShadow({mode: 'open'});
+      this.shadowRoot.appendChild(template.content.cloneNode(true))
+    }
   }
 }
 
