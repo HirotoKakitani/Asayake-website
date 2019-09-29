@@ -12,6 +12,9 @@ function showContent(){
     document.querySelector(".lds-circle").style.display = "none";
     document.querySelector(".page-content").style.display = "block";
     document.querySelector("body").style.backgroundColor = "#dedede";
+    if(window.location.pathname == '/src/about.html'){
+        document.querySelector("body").style.backgroundImage = 'url("../res/photos/carousel_13.JPG")'
+    }
     //#fff0d6
 }
 
