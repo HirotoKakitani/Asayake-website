@@ -11,7 +11,7 @@ window.onload = function(){
 function showContent(){
     document.querySelector(".lds-circle").style.display = "none";
     document.querySelector(".page-content").style.display = "block";
-    document.querySelector("body").style.backgroundColor = "white";
+    document.querySelector("body").style.backgroundColor = "#dedede";
     //#fff0d6
 }
 

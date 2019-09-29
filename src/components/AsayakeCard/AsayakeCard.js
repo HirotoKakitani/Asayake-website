@@ -17,10 +17,10 @@ template.innerHTML = `
 #image-cont ::slotted(img) {
   width:100%;
   height:auto;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out; 
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; 
   margin:0;
   border-bottom: 2px solid black;
   border-top-left-radius: .5em;
