@@ -1,0 +1,53 @@
+.page-content{
+    background-image:url("../../res/photos/carousel_3.jpg");
+    background-size: cover;
+
+}
+
+article{
+    height:90vh;
+    position:relative;
+}
+h1{
+    font-size:2em;
+}
+p{
+    font-size: 1em;
+    padding-top:2em;
+    padding-left:2em;
+    padding-right:2em;
+}
+
+p a{
+    display:inline-block;
+    color: red;
+    text-align:center;
+}
+
+section{
+    position: absolute;
+    left:0;
+    right:0;
+    background-color:rgba(0, 0, 0, 0.513);
+    color:white;    
+    text-align: center;
+    top:30vh;
+    padding: 2em;
+
+}
+
+@media screen and (min-width: 950px) {
+   p{
+       font-size: 1.5em;
+   }
+   
+    section{
+        position:absolute;
+        left:0;
+        right:0;
+        top:50vh;
+        margin-top:-25vh;
+        background-color:rgba(0, 0, 0, 0.513);
+        padding: 5em;
+    }
+}

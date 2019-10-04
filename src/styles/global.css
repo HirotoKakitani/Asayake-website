@@ -23,11 +23,9 @@ nav{
 
 #logo{
     height:64px;
-    -width:64px;
     width:230px;
     border-radius: 1em;
     display:block;
-    -background-image: url("../../res/icons/asayake_logo.png");
     background-image: url("../../res/icons/banner.png");
     background-color:white;
     background-size: cover;
