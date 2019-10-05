@@ -1,0 +1,43 @@
+#concert-container{
+    display:flex;
+    flex-direction: column;
+}
+
+.concert-year{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5em;
+    background-color: rgb(111, 49, 49);
+    color:white;
+}
+.concert-year:nth-child(even){
+    background-color:  rgb(123, 89, 89);
+    flex-direction: row-reverse;
+}
+
+
+.concert-year img{
+    border: 3px black solid;
+    border-radius: 0.5em;
+    height:25vh;
+    width:auto;
+    display:table;
+    margin:0 auto;
+    background-color: 
+}
+
+.concert-text{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.concert-text > *{
+    flex:1;
+}
+
+
+.concert-year > *{
+    flex: 1;
+}

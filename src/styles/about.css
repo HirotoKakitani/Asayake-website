@@ -7,11 +7,12 @@ body{
 .about-section {
     scroll-snap-align: center;
     padding: 1%;
-    -height:33vh;
     background-color:rgba(0, 0, 0, 0.513);
     color:white;
 }
 .about-section p{
+    padding-left:3em;
+    padding-right:3em;
     font-size: 1.25em;
 }
 .about-filler{
