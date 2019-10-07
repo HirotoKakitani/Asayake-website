@@ -1,4 +1,4 @@
-#grid{
+#member-grid{
     flex-grow:1;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -22,7 +22,11 @@ asayake-card > div > h2{
     #member-grid{
         flex-grow:1;
         display:grid;
-        grid-template-columns: repeat(auto-fit, minmax(720px, 1fr));
+        grid-template-columns: repeat(4, minmax(10vw, 30vw));
+        grid-column-gap: 1vw;
+        grid-row-gap: 1vw;
+        padding:1vw;
+    
     }
     asayake-card > div > p {
         font-size: 1vw;
