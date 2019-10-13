@@ -1,9 +1,46 @@
 body{
     background-size: cover;
     background-attachment: fixed;
-    scroll-snap-type: y mandatory;
+}
+article{
+    margin: 0.5em;
+    padding:0.5em;
+    background-color:  rgba(0, 0, 0, 0.13);
+    border-radius:0.5em;
+}
+
+h2{
+    font-size:1.5em;
+    margin:0.5em auto;
+}
+h1{
+    font-size: 2em;
+    text-align:center;
+}
+article > img{
+    width:50vw;
+    height:auto;
+    margin: 1em auto;
+    display:block;
+}
+.about-section > img{
+    width:30vw;
+    height:auto;
+    float:right;
 
 }
+#who-we-are > img{
+    float:right;
+}
+@media screen and (min-width: 950px) {
+    article{
+        margin: 1em;
+        padding:1em;
+        background-color: rgba(0, 0, 0, 0.13);
+        border-radius:0.5em;
+    }
+}
+/*
 .about-section {
     scroll-snap-align: center;
     padding: 1%;
@@ -15,9 +52,7 @@ body{
     padding-right:3em;
     font-size: 1.25em;
 }
-.about-filler{
-    height:66vh;
-}
+
 
 h1{
     text-align:center;
@@ -33,4 +68,4 @@ footer{
 
 #about-us{
     margin-top:33vh;
-}
+}*/

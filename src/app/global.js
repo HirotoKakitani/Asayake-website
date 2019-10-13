@@ -13,9 +13,10 @@ function showContent(){
     document.querySelector(".page-content").style.display = "flex";
     document.querySelector(".page-content").style["flex-direction"] = "column";
     document.querySelector("body").style.backgroundColor = "#dedede";
-    if(window.location.pathname == '/src/about.html'){
+    /*if(window.location.pathname == '/src/about.html'){
         document.querySelector("body").style.backgroundImage = 'url("../res/photos/carousel_13.JPG")'
     }
+    */
     //#fff0d6
 }
 
