@@ -5,8 +5,7 @@
  * buttons in imgCont will make it full size
  */
 const template = document.createElement('template');
-    template.innerHTML = 
-    `
+    template.innerHTML = /*html*/`
       <style>
       :host{
         overflow:hidden;

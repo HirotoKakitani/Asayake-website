@@ -5,11 +5,6 @@
     overflow:hidden;
 }
 
-/*for img in carousel, styling slotted doesnt work for some reason??*/
-asayake-carousel > img{
-    -margin:0 auto;
-}
-
 #content-cont{
     flex: 8;
     flex-grow:1;
@@ -37,13 +32,10 @@ asayake-carousel > img{
     background-color:rgba(0, 0, 0, 0.513);
     color:white;
     display:inline-block;
-    -border-radius: .5em;
     margin-top: 1em;
     margin-bottom:1em;
     background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../../res/photos/carousel_7.JPG");
     background-size:cover;
-
-
 }
 #asa-description h1{
     font-size: 2em;
@@ -51,11 +43,9 @@ asayake-carousel > img{
 }
 #asa-description p{
     margin: 0.25em;
-
 }
 
 .asayake-block{
-    border: 1px thin black;
     box-sizing:border-box;
     padding: 1em;
     box-shadow: 5px  rgba(12, 12, 12, 0.61);
@@ -82,7 +72,7 @@ asayake-carousel > img{
     width:100%;
     top: 0;
     left:0; 
-    padding-top:46%;
+    padding-top:45%;
     text-decoration: none;
     background-color:rgba(12, 12, 12, 0.61);
     color:white;        
