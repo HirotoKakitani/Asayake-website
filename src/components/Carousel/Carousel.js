@@ -23,9 +23,8 @@ const template = document.createElement('template');
         height:100%;
         background-color:black;
         background-image:url(../../res/photos/carousel_12.JPG);
-        -background-image: linear-gradient(45deg, rgb(112, 3, 3), black);
         background-size:cover;
-        filter:grayscale(100%);
+        filter:grayscale(100%) blur(5px);
       }
       #imgCont ::slotted(.active){
           opacity:1;

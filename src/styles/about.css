@@ -17,11 +17,25 @@ h1{
     font-size: 2em;
     text-align:center;
 }
-article > img{
-    width:50vw;
+#main-image-cont{
+    height:auto;
+    position:relative;
+}
+#main-image-cont > img{
+    width:50%;
     height:auto;
     margin: 1em auto;
     display:block;
+}
+#main-image-background{
+    position:absolute;
+    left:0;
+    z-index:-1;
+    background-image:url("../../res/photos/carousel_1.JPG");
+    background-size:contain;
+    filter:grayscale(100%) blur(5px);
+    height:100%;
+    width:100%;
 }
 .about-section > img{
     width:30vw;
