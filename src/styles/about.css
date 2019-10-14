@@ -41,11 +41,13 @@ h1{
     width:30vw;
     height:auto;
     float:right;
-
 }
 #who-we-are > img{
     float:right;
     margin: 1em;
+}
+hr{
+    margin: 1em 0;
 }
 @media screen and (min-width: 950px) {
     article{
