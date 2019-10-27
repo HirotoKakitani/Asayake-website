@@ -1,6 +1,31 @@
 # Editing the Website
 <i>By Hiro Kakitani</i><br><br>
 This guide is intended for anyone maintaining the site that might not have any experience with web development. If you know what you're doing, then you probably don't need to read this :) 
+  - [Setup](#setup)
+    - [Getting the Source code](#getting-the-source-code)
+    - [Getting a Text Editor](#getting-a-text-editor)
+  - [Folder Structure](#folder-structure)
+    - [Opening the Code in the Editor](#opening-the-code-in-the-editor)
+    - [Files](#files)
+      - [HTML Files](#html-files)
+      - [Images](#images)
+  - [Making Changes](#making-changes)
+    - [Using VS Code](#using-vs-code)
+    - [Basics](#basics)
+      - [Basic HTML](#basic-html)
+      - [Changing Text](#changing-text)
+      - [Changing Images](#changing-images)
+    - [Editing Each Page](#editing-each-page)
+      - [Stuff to Not Touch](#stuff-to-not-touch)
+      - [index.html (Home Page)](#indexhtml-home-page)
+      - [about.html (About Page)](#abouthtml-about-page)
+      - [gallery.html (Image Gallery)](#galleryhtml-image-gallery)
+      - [media.html (Collection of Videos)](#mediahtml-collection-of-videos)
+      - [roster.html (Roster Page)](#rosterhtml-roster-page)
+      - [booking.html (Contact Page)](#bookinghtml-contact-page)
+      - [concert.html (List of Past Concerts)](#concerthtml-list-of-past-concerts)
+      - [comingSoon.html (Placeholder Page)](#comingsoonhtml-placeholder-page)
+
 
 ## Setup
 Before being able to edit the website, you'll need to do some one-time setup. 
@@ -41,7 +66,8 @@ Each HTML file corresponds to a page of the website. Here's a break down of each
 | comingSoon.html | Placeholder for pages I haven't made yet lol  |   |   |   |
 
 #### Images
-If you want to add/change any of the images, add them to the "res/photos" folder. More specific instructions for changing images can be found <a href="">here</a>.
+If you want to add/change any of the images, add them to the "res/photos" folder. More specific instructions for changing images can be found <a href="#changing-images">here</a>.
+
 
 ## Making Changes 
 ### Using VS Code
@@ -59,19 +85,93 @@ If it doesn't automatically open up your browser, open your browser and go to "h
 
 Whenever you save any changes to a page's html file, Live Server will automatically reload the preview of the page to reflect the new changes. 
 
-### Editing Each Page
-Here, I'll explain basic HTML, what to touch and what you probably shouldn't touch, as well as how to make specific changes to each page.
+### Basics
+If you're interested in it, here's a quick crash course of basic HTML concepts that'll be helpful when maintaining the website. 
 
 #### Basic HTML
-HTML is a way to structure elements on to a web page. Basically, every image, paragraph of text, button, or any other "thing" you see on web site is an element. When looking at the HTML, you might notice a bunch of brackets like this: "\<div\>". Every element on a web page is defined by these brackets. For example, on the index.html page, you'll see a bunch of "img" elements: 
+HTML is a way to structure elements on to a web page. Basically, every image, paragraph of text, button, or any other "thing" you see on web site is an element. When looking at the HTML, you might notice a bunch of brackets like this: "\<div\>". Every element on a web page is defined by these brackets. For example, on the index.html page, you'll see an "h1" tag like this:
+
+<img src="./res/readme-images/vscode_h1.PNG"></img>
+
+The "\<h1\>" tag defines a header on the web page. Elements begin with an opening tag ("\<h1\>"), end with a closing tag ("\<\/h1\>"), and the content of the elements are found in between (The text "Asayake Taiko"). Closing tags will always have a forward slash "/" before the element name. The names of the opening tags and the closing tags must match, or else it won't be valid HTML.
+
+You can also embed some additional information about the element in the opening tag. In index.html, you'll see a bunch of "img" tags that look a little different: 
 
 <img src="./res/readme-images/vscode_img.PNG"></img>
 
-The "\<img\>" tag defines an image to be displayed on the web page. 
+As you can see, "src" and "alt" are being assigned values in the opening tag. These are called attributes- they further specify things about an element. For example, defining just an "img" tag like this: 
 
+\<img\>\</img\>
+
+won't display anything. That's because img tags require at least a "src" attribute to specify what image to display. In the above example, the image being displayed is found in the file "../res/photos/carousel_12.JPG". The "alt" attribute just specifies text that will be shown in place of the image in the case that the image doesn't load properly. 
+
+#### Changing Text
+One of the changes you'll be making is editing the text on the website. The majority of the text you'll be editing will be found in \<p\> tags (stands for paragraph). Changing the text is as simple as modifying the contents of the \<p\> tag. 
+
+In case you want a line break in the text, just add a \<br\> element. **Writing your text on a separate line in the code will not reflect on the actual page.** 
+
+#### Changing Images
+Changing images requires changing the "src" attribute in the img tag, as described in the <a href="#basic-html">Basic HTML</a> portion. First, make sure any images you want to use are in the "/res/photos" folder. Then, create an \<img\> tag (just copy and paste an existing one) and make sure the "src" attribute is set to the image you want to use. If you really want to go the extra mile, then set the "alt" attribute to be some fallback text that will be displayed in case the image doesn't load. 
+
+
+### Editing Each Page
+Here, I'll explain what to touch and what you probably shouldn't touch, as well as how to make specific changes to each page.
 
 #### Stuff to Not Touch
-There are some common lines of code among all of the HTML files that you don't need to worry about. 
+There are some common lines of code among all of the HTML files that you don't need to worry about. Go to any one of the HTML files and find the \<nav\> tag. Everything within the \<nav\> tag and everything that falls above it, ignore it. No touch. Also find the \<footer\> tag. Ignore everything inside and beneath it. No touchy. 
+
+If you're using VS Code, there's a cool feature where if you click on the little "V" arrow thing next to the line number (left side of the screen), you can collapse everything within that tag. For example: 
+
+<img src="./res/readme-images/vscode_precollapse.PNG"></img>
+
+Clicking on the arrow on line 26 will collapse the entirety of the \<nav\> tag, making it look like this: 
+
+<img src="./res/readme-images/vscode_postcollapse.PNG"></img>
+
+Doing this might be useful for hiding everything that you should ignore. 
 
 #### index.html (Home Page)
-The only things you'll probably want to change on the home page are 
+The only things you might want to change on the home page are the images in the carousel (the slideshow thing) and image on the four buttons on the bottom portion of the page. 
+
+In both of these cases, all you have to do is modify the img element's attributes. Images in the carousel are found in the \<asayake-carousel\> element. You can add as many as you want, all the images you add here will be shown in a loop, in the order that they are defined in \<asayake-carousel\>. 
+
+In \<asayake-carousel\>, you'll see one image that has an additional attribute "class" set to "active". If you want a particular image to be the first image to show up in the slideshow, set that image's class attribute to active. The slideshow will start on that image, and continue down. **There should only be one image in \<asayake-carousel\> with the class set to active.**
+
+<img src="./res/readme-images/vscode_active.PNG"></img>
+
+#### about.html (About Page)
+Everything you'll want to change in the about page is found in the \<article\> tag. If all you want to do is change some of the text or images in place, then I've explained how to do that <a href="#changing-text">here</a>. 
+
+If you want to add additional images to the page, or add more text sections to the page, that will require adding more elements to the page. If you feel like you can figure it out, don't hesitate to ask me any questions :) Otherwise, let me know and I can make the changes. 
+
+The HTML follows the flow of the page. The big group photo at the top of the page is found inside of the \<div\> with the id set to "main-image-cont" (top of \<article\>). 
+
+<img src="./res/readme-images/vscode_aboutimg.PNG"></img>
+
+The text sections beneath the big group photo are contained within \<section\> elements. Within each \<section\> There is a \<h2\> tag that corresponds with the section title, a \<p\> tag that corresponds with the text inside the section, and potentially an \<img\> tag. 
+
+<img src="./res/readme-images/vscode_aboutsec.PNG"></img>
+
+#### gallery.html (Image Gallery)
+Modifying this page is pretty simple. All you have to do is add (or remove) img elements from the the \<div\> with the id of "grid". It will automatically resize and style the image for you. 
+
+#### media.html (Collection of Videos)
+Modifying this page is also pretty simple, you don't even have to write your own HTML! All of the videos are contained in the \<section\> element, where each video is an \<iframe\>. Assuming the video you want to add is hosted on Asa's Youtube, go to that video, and click on the "Share button", and then "Embed". It will give you the HTML for the \<iframe\> you can just copy and paste. **REALLY IMPORTANT: remove the "height" and "width" attributes from the \<iframe\> after pasting it.**   
+
+<img src="./res/readme-images/youtube_embed.PNG"></img>
+
+#### roster.html (Roster Page)
+TODO
+
+#### booking.html (Contact Page)
+Unless Asa's email or social media changes, you probably don't need to change this page. But in case it does, all you have to do is change the URL in the "href" attribute of the corresponding \<a\> (anchor) element. 
+
+#### concert.html (List of Past Concerts)
+The list of concerts is found in the \<section\> element with the id of "concert-container". Each year is contain in their own \<section\> element with the class "concert-year". 
+
+<img src="./res/readme-images/vscode_concert.PNG"></img>
+
+To add a concert, just copy and paste one of the \<section\> elements from a previous concert, and change the text and images. There is a folder within /res/photos called "concert-posters" that you can store the concert poster image. The image "mystery_concert.png" is used as a placeholder for the upcoming concerts. 
+
+#### comingSoon.html (Placeholder Page)
+This page is just a placeholder for unfinished pages. You probably don't need to edit this page. 
