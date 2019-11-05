@@ -12,7 +12,9 @@ template.innerHTML = /*html*/`
   border: 1px solid black;
   margin:4px;
   background: rgb(80, 80, 80);
-  border-radius: .5em;
+  border-top-right-radius:0.5em;
+  border-top-left-radius:0.5em;
+  -border-radius: .5em;
 }
 #image-cont ::slotted(img) {
   width:100%;
@@ -25,9 +27,7 @@ template.innerHTML = /*html*/`
   border-bottom: 2px solid black;
   border-top-left-radius: .5em;
   border-top-right-radius: .5em;
-
 }
-
 #image-cont  ::slotted(img.top){
   position:absolute;
   z-index:1;
@@ -45,61 +45,48 @@ template.innerHTML = /*html*/`
   width:100%;
 }
 
+#info-table{
+  padding:0.5em;
+  font-size: 0.75em;
+  text-align:center;
+  color:white;
+  background-color:rgba(40, 40, 40, 0.75);
+  position: absolute;
+  z-index:100;
+  top:50%; /* TODO Set to 100% when clicked to show info*/
+  visibility:hidden;
+  opacity: 0;
+  transition-property: top, opacity, visibility;
+  transition-duration: 0.5s;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
 .inactive{
   opacity: 0;
   visibility: hidden;
   top: -50% !important;
 }
 
-#info-modal{
-  left: 33%;
-  z-index:30;
-  position: fixed;
-  top: 33%;
-  width: 33%;
-  box-shadow: 0 3px 7px rgba(0,0,0,.25);
-  box-sizing: border-box;
-  transition: all .4s ease-in-out;
-  -moz-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out
-  -o-transition: opacity all .4s ease-in-out;
-}
-
-#info-modal-content{
-  z-index:999;
-  position: fixed;
-  background-color: #fff0d6;
-  width:33%;
-  height: 33%;
-  overflow-y: auto;
-  padding:2%;
-  border-radius: 0.5em; 
-}
-
-#info-modal-overlay{
-  background-color: #000;
-  background: rgba(0,0,0,.8);
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 20
-}
-
 </style>
 <div id = "image-cont">
   <slot class="top" name="memberImage">No Image</slot>
-  <slot  name="altImage">No Alt Image</slot>
+  <slot name="altImage">No Alt Image</slot>
   <slot name="memberName">No Name</slot>
-</div>
-<div id="info-modal" class="inactive">
-  <div id="info-modal-content">
-    <slot name="introImage">No images</slot>
-    <slot name="introText">No text</slot>
-  </div>
-  <div id="info-modal-overlay">
-  </div>
+  <table id="info-table">
+    <tr>
+        <th>Major: </th><td><slot name="major"></slot></td>
+    </tr>
+    <tr>
+        <th>Year: </th><td><slot name="year"></slot></td>
+    </tr>
+    <tr>
+        <th>Favorite Song: </th><td><slot name="favSong"></slot></td>
+    </tr>
+    <tr>
+        <td colspan="2"><slot name="quote"></slot></td>
+    </tr>
+  </table>
 </div>
 `;
 window.ShadyCSS &&
@@ -112,14 +99,7 @@ class AsayakeCard extends HTMLElement {
     //creates shadow root
     var shadow = this.attachShadow({mode:'open'});
     shadow.appendChild(template.content.cloneNode(true));
-
-    this.addEventListener("click", ()=>{
-      this.shadowRoot.querySelector("#info-modal").classList.toggle("inactive");
-    });
-
-    this.addEventListener("mouseover", ()=>{
-
-    });
+    
   }
   connectedCallback() {
     // for polyfill
@@ -130,6 +110,21 @@ class AsayakeCard extends HTMLElement {
       this.shadowRoot.appendChild(
         document.importNode(myElementTemplate.content, true));
     }
+
+    // TODO check this, not actually reading css
+    this.shadowRoot.addEventListener("click", () =>{
+      let table = this.shadowRoot.getElementById("info-table");
+      if (table.style.top == "100%"){
+        table.style.top = "50%";
+        table.style.opacity = "0";
+        table.style.visibility = "hidden";
+      }
+      else{
+        table.style.top = "100%";
+        table.style.opacity = "1";
+        table.style.visibility = "visible";
+      }
+    });
   }
 }
 
