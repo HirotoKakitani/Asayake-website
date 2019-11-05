@@ -91,7 +91,7 @@ template.innerHTML = /*html*/`
 <div id = "image-cont">
   <slot class="top" name="memberImage">No Image</slot>
   <slot  name="altImage">No Alt Image</slot>
-  <slot name="memberName"> No Name</slot>
+  <slot name="memberName">No Name</slot>
 </div>
 <div id="info-modal" class="inactive">
   <div id="info-modal-content">
