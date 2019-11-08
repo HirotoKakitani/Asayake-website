@@ -35,6 +35,7 @@ template.innerHTML = /*html*/`
 
 #image-cont  ::slotted(img.top:hover){
   opacity : 0;
+  cursor: pointer;
 }
 
 #image-cont ::slotted(span){
