@@ -9,6 +9,37 @@ img{
     height:auto;
     flex:1;
 }
+img:hover{
+    cursor: pointer;
+}
+#modal-background{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    z-index:100;
+    background-color:rgba(0, 0, 0, 0.75);
+    display:none;   
+    
+}
+#image-exit{
+    color:white;
+    font-size: 1.5em;
+    position:absolute;
+    right:0.5em;
+    top:0.5em;
+}
+#image-exit:hover{
+    color:grey;
+    cursor:pointer;
+}
+
+.large-image{
+    width:75vw;
+    position:absolute;
+    height:auto;
+    left:12.5vw;
+}
 
 
 @media screen and (min-width:950px) {
