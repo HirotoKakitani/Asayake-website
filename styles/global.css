@@ -26,7 +26,7 @@ nav{
     width:230px;
     border-radius: 1em;
     display:block;
-    background-image: url("../../res/icons/banner.png");
+    background-image: url("/res/icons/banner.png");
     background-color:white;
     background-size: cover;
 }
@@ -63,7 +63,7 @@ nav{
     display:inline-block;
     width:30px;
     height:30px;
-    background-image: url("../../res/icons/hamburger_menu.png");
+    background-image: url("/res/icons/hamburger_menu.png");
     background-size: contain;
 }
 
@@ -90,17 +90,17 @@ footer span{
 }
 
 #instagram-icon{
-    background-image: url("/../res/icons/icons8-instagram-50.png");
+    background-image: url("/res/icons/icons8-instagram-50.png");
 
 }
 #facebook-icon{
-    background-image: url("../../res/icons/icons8-facebook-50.png");
+    background-image: url("/res/icons/icons8-facebook-50.png");
 }
 #youtube-icon{
-    background-image: url("../../res/icons/icons8-play-button-50.png");
+    background-image: url("/res/icons/icons8-play-button-50.png");
 }
 #mail-icon{
-    background-image: url("../../res/icons/icons8-important-mail-48.png");
+    background-image: url("/res/icons/icons8-important-mail-48.png");
 }
 
 .page-content{

@@ -31,7 +31,7 @@ h1{
     position:absolute;
     left:0;
     z-index:-1;
-    background-image:url("../../res/photos/carousel_1.JPG");
+    background-image:url("/res/photos/carousel_1.JPG");
     background-size:contain;
     filter:grayscale(100%) blur(5px);
     height:100%;
@@ -57,32 +57,3 @@ hr{
         border-radius:0.5em;
     }
 }
-/*
-.about-section {
-    scroll-snap-align: center;
-    padding: 1%;
-    background-color:rgba(0, 0, 0, 0.513);
-    color:white;
-}
-.about-section p{
-    padding-left:3em;
-    padding-right:3em;
-    font-size: 1.25em;
-}
-
-
-h1{
-    text-align:center;
-    font-size: 2em;
-}
-
-nav{
-    scroll-snap-align:start;
-}
-footer{
-    scroll-snap-align:start;
-}
-
-#about-us{
-    margin-top:33vh;
-}*/
