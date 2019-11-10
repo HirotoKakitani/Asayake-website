@@ -21,7 +21,7 @@ const template = document.createElement('template');
         width:100%;
         height:100%;
         background-color:black;
-        background-image:url(../../res/photos/carousel_12.JPG);
+        background-image:url("res/photos/carousel_12.jpg");
         background-size:cover;
         filter:grayscale(100%) blur(5px);
       }

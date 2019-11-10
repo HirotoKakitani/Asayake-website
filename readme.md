@@ -103,7 +103,7 @@ As you can see, "src" and "alt" are being assigned values in the opening tag. Th
 
 \<img\>\</img\>
 
-won't display anything. That's because img tags require at least a "src" attribute to specify what image to display. In the above example, the image being displayed is found in the file "../res/photos/carousel_12.JPG". The "alt" attribute just specifies text that will be shown in place of the image in the case that the image doesn't load properly. 
+won't display anything. That's because img tags require at least a "src" attribute to specify what image to display. In the above example, the image being displayed is found in the file "../res/photos/carousel_12.jpg". The "alt" attribute just specifies text that will be shown in place of the image in the case that the image doesn't load properly. 
 
 #### Changing Text
 One of the changes you'll be making is editing the text on the website. The majority of the text you'll be editing will be found in \<p\> tags (stands for paragraph). Changing the text is as simple as modifying the contents of the \<p\> tag. 

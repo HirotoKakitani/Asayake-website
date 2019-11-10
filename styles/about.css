@@ -31,7 +31,7 @@ h1{
     position:absolute;
     left:0;
     z-index:-1;
-    background-image:url("/res/photos/carousel_1.JPG");
+    background-image:url("../res/photos/carousel_1.jpg");
     background-size:contain;
     filter:grayscale(100%) blur(5px);
     height:100%;
