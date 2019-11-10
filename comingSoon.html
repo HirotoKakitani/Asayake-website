@@ -1,3 +1,11 @@
+<!--
+    TODO
+    * have footer outsoude of content-cont -> place footer at bottom of the page. 
+    * have cards take up all available vertical height.
+    * style the footer 
+    * center carousel image, with blurred image behind.
+    * Add more dummy content to cards
+-->
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,14 +17,10 @@
         <title>Asayake Taiko</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
         <link rel="stylesheet" href="styles/global.css">
-        <link rel="stylesheet" href="styles/booking.css">
-        <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-        <script src="components/Carousel/Carousel.js" content="text/javascript"></script>    
-        <script src="app/global.js" async defer type="text/javascript"></script>
-        <script src="app/index.js" type="text/javascript"></script>
-    </head>
+        <link rel="stylesheet" href="styles/comingSoon.css">
+        <script src="js/global.js" async defer type="text/javascript"></script>
+        </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -24,28 +28,20 @@
         <div class="lds-circle"><div></div></div>
         <div class="page-content">
             <nav>
-                <a id="logo" href="/src/index.html"></a>
+                <a id="logo" href="index.html"></a>
                 <ul class="nav-list" id="main-nav">
-                    <li class="nav-item"><a href="./index.html">Home</a></li>
-                    <li class="nav-item"><a href="./about.html">About</a></li>
-                    <li class="nav-item"><a href="./gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a href="./media.html">Media</a></li>
-                    <li class="nav-item"><a href="./roster.html">Roster</a></li>
-                    <li class="nav-item"><a href="#">Booking/Donate</a></li>
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a href="media.html">Media</a></li>
+                    <li class="nav-item"><a href="roster.html">Roster</a></li>
+                    <li class="nav-item"><a href="booking.html">Booking/Donate</a></li>
                 </ul>
                 <span id="navbar-toggle"><span id="navbar-icon"></span></span>
             </nav>
-            <article>
-                <section>
-                    <h1>Contact</h1>
-                    <p>
-                        For booking, please email us at: <a href="mailto: asayaketaiko@gmail.com">asayaketaiko@gmail.com</a>.
-                    </p>
-                    <p>
-                        Follow us on <a href="https://www.facebook.com/AsayakeTaiko/">Facebook</a>, <a href="https://www.instagram.com/asayake_taiko/">Instagram</a>, and <a href="https://www.youtube.com/user/AsayakeTaiko/">YouTube</a>.
-                    </p>
-                </section>
-            </article>
+            <div id="coming-soon">
+                <p>This page is under construction,<br>check back later for updates!</p>
+            </div>
             <footer>
                 <div id="icon-cont">
                     <a href="https://www.instagram.com/asayake_taiko/"><span id="instagram-icon"></span></a>

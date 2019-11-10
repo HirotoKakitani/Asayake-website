@@ -13,15 +13,5 @@ function showContent(){
     document.querySelector(".page-content").style.display = "flex";
     document.querySelector(".page-content").style["flex-direction"] = "column";
     document.querySelector("body").style.backgroundColor = "#dedede";
-    /*
-    if(window.location.pathname == '/src/gallery.html'){
-        let images = document.querySelectorAll("#grid > img");
-    
-        images.forEach(img => {
-            console.log(img.src);
-        });      
-    }
-    */
-    //#fff0d6
 }
 
