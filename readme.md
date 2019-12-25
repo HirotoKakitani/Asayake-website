@@ -25,6 +25,7 @@ This guide is intended for anyone maintaining the site that might not have any e
       - [booking.html (Contact Page)](#bookinghtml-contact-page)
       - [concert.html (List of Past Concerts)](#concerthtml-list-of-past-concerts)
       - [comingSoon.html (Placeholder Page)](#comingsoonhtml-placeholder-page)
+    - [Deploying the Website](#deploying-the-website)
 
 
 ## Setup
@@ -50,7 +51,7 @@ To start editing the site, go to "File > Open Folder" and select the "Asayake-we
 
 
 ### Files
-There are a lot of folders and files here, but **the only ones you have to worry about are the ".html" files in the "src" folder, and the images in the "res/photos" folder**. Modifying the other files may open up a Pandora's Box of pain and suffering. 
+There are a lot of folders and files here, but **the only ones you have to worry about are the ".html" files, and the images in the "res/photos" folder**. Modifying the other files may open up a Pandora's Box of pain and suffering. 
 
 #### HTML Files
 Each HTML file corresponds to a page of the website. Here's a break down of each file: 
@@ -81,7 +82,7 @@ Now that you have the source code open, you'll probably want to see how the page
 
 This should automatically open up your default browser to display the opened HTML file. **It's recommended that you use Google Chrome or Firefox when making any changes.**
 
-If it doesn't automatically open up your browser, open your browser and go to "http://127.0.0.1:5500/". You should see a list of folders. Clicking on "src" open up the website's "index.html" page. From there, you should be able to navigate through the whole website.
+If it doesn't automatically open up your browser, open your browser and go to "http://127.0.0.1:5500/".
 
 Whenever you save any changes to a page's html file, Live Server will automatically reload the preview of the page to reflect the new changes. 
 
@@ -111,8 +112,17 @@ One of the changes you'll be making is editing the text on the website. The majo
 In case you want a line break in the text, just add a \<br\> element. **Writing your text on a separate line in the code will not reflect on the actual page.** 
 
 #### Changing Images
-Changing images requires changing the "src" attribute in the img tag, as described in the <a href="#basic-html">Basic HTML</a> portion. First, make sure any images you want to use are in the "/res/photos" folder. Then, create an \<img\> tag (just copy and paste an existing one) and make sure the "src" attribute is set to the image you want to use. If you really want to go the extra mile, then set the "alt" attribute to be some fallback text that will be displayed in case the image doesn't load. 
+Changing images requires changing the "src" attribute in the img tag, as described in the <a href="#basic-html">Basic HTML</a> portion. First, make sure any images you want to use are in the "/res/photos" folder. Then, create an \<img\> tag (just copy and paste an existing one) and make sure the "src" attribute is set to the image you want to use. If you really want to go the extra mile, then set the "alt" attribute to be some fallback text that will be displayed in case the image doesn't load.<br><br>
+**BIG IMPORTANT NOTE INCOMING...**<br>
+The src attribute is case sensitive! For consistency's sake I made all of the file extensions for each image lower case. You don't have to do this, but just keep in mind that entering: <br>
+\<img src="res/photos/image.png"\>\</img\> 
+<br>
+will NOT work if the image name is "image.PNG" or "Image.png" .<br>
+**...END BIG IMPORTANT NOTE**
 
+**ANOTHER BIG IMPORTANT NOTE INCOMING...**<br>
+When uploading images, be conscious about the image's size. Larger (high resolution) images will be slower to load, especially on smaller devices like phones. This will be super apparent on a page with a lot of images, like the gallery or the roster page. Make sure to resize your images accordingly before using them for the site (if you don't have Photoshop, <a href="https://www.photopea.com/">Photopea</a> is a free alternative that you can use to resize/edit images). For reference, the images in the gallery are about 1280 x 853 each. The roster images are a bit smaller.<br>
+**...END OTHER BIG IMPORTANT NOTE**
 
 ### Editing Each Page
 Here, I'll explain what to touch and what you probably shouldn't touch, as well as how to make specific changes to each page.
@@ -156,18 +166,28 @@ The text sections beneath the big group photo are contained within \<section\> e
 Modifying this page is pretty simple. All you have to do is add (or remove) img elements from the the \<div\> with the id of "grid". It will automatically resize and style the image for you. 
 
 #### media.html (Collection of Videos)
-Modifying this page is also pretty simple, you don't even have to write your own HTML! All of the videos are contained in the \<section\> element, where each video is an \<iframe\>. Assuming the video you want to add is hosted on Asa's Youtube, go to that video, and click on the "Share button", and then "Embed". It will give you the HTML for the \<iframe\> you can just copy and paste. **REALLY IMPORTANT: remove the "height" and "width" attributes from the \<iframe\> after pasting it.**   
+Modifying this page is also pretty simple, you don't even have to write your own HTML! All of the videos are contained in the \<section\> element, where each video is an \<iframe\>. Assuming the video you want to add is hosted on Asa's Youtube, go to that video, and click on the "Share button", and then "Embed". It will give you the HTML for the \<iframe\> you can just copy and paste.<br>
+ **REALLY IMPORTANT: remove the "height" and "width" attributes from the \<iframe\> after pasting it.**   
 
 <img src="./res/readme-images/youtube_embed.PNG"></img>
 
 #### roster.html (Roster Page)
-TODO
+Everything you want to change in this page is in the \<div\> with the id "member-grid". Inside of "member-grid", there are a bunch of \<asayake-card\> elements. Each one corresponds to an Asa member: 
+
+<img src="./res/readme-images/vscode_roster.PNG"></img>
+
+As you can see, there are a lot of things that go inside of \<asayake-card\>. 
+
+There are two images: one with the "slot" attribute set to "memberImage" and another with the slot attribute set to "altImage". The "memberImage" corresponds to the main image of the member, and "altImage" corresponds to the funny picture that appears when the user hovers over the main image. All images of the members should be placed in the "res/photos/roster_images" folder. <br><br>
+The \<span\> corresponds to the name of the member. <br><br>
+There are four \<p\> elements with the slot attributes "major", "year", "favSong", and "quote". Each one corresponds to a different entry for the member.<br><br>
+The easiest way to add new member would be to just copy and paste a previous member's \<asayake-card\> and change the text and image URLs.
 
 #### booking.html (Contact Page)
 Unless Asa's email or social media changes, you probably don't need to change this page. But in case it does, all you have to do is change the URL in the "href" attribute of the corresponding \<a\> (anchor) element. 
 
 #### concert.html (List of Past Concerts)
-The list of concerts is found in the \<section\> element with the id of "concert-container". Each year is contain in their own \<section\> element with the class "concert-year". 
+The list of concerts is found in the \<section\> element with the id of "concert-container". Each year is contained in their own \<section\> element with the class "concert-year". 
 
 <img src="./res/readme-images/vscode_concert.PNG"></img>
 
@@ -175,3 +195,8 @@ To add a concert, just copy and paste one of the \<section\> elements from a pre
 
 #### comingSoon.html (Placeholder Page)
 This page is just a placeholder for unfinished pages. You probably don't need to edit this page. 
+
+## Deploying the Website
+After editing the website, it's now time to make you changes public!
+TODO detail process for deploying
+https://ucsdservicedesk.service-now.com/its?id=kb_article_view&sysparm_article=KB0030548&sys_kb_id=a7d72b1bdbc67bc09736f35aaf961975

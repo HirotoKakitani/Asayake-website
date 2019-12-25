@@ -8,15 +8,17 @@ article{
     text-align: center; 
     display: flex;
     flex-direction:column;
-    justify-content: space-around
+    justify-content: space-around;
+    align-items: center;
 }
 h1{
     font-size:2em;
-    padding-bottom:1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 p{
     font-size: 1em;
-    padding-bottom:1em;
 }
 
 p a{
@@ -29,6 +31,14 @@ section{
     align-self: center;
     padding:0.5em;
     margin:0.5em;
+    width:100%;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+section > *{
+    flex:1;
+
 }
 
 @media screen and (min-width: 950px) {
@@ -40,6 +50,8 @@ section{
         border-radius:0.5em;
         align-self: center;
         padding:1em;
-        margin:1em; 
+        margin:1em;
+        width:66%;
+ 
     }
 }

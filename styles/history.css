@@ -1,0 +1,59 @@
+body{
+    background-size: cover;
+    background-attachment: fixed;
+}
+article{
+    margin: 0.5em;
+    padding:0.5em;
+    background-color:  rgba(0, 0, 0, 0.13);
+    border-radius:0.5em;
+}
+
+h2{
+    font-size:1.5em;
+    margin:0.5em auto;
+}
+h1{
+    font-size: 2em;
+    text-align:center;
+}
+#main-image-cont{
+    height:auto;
+    position:relative;
+}
+#main-image-cont > img{
+    width:50%;
+    height:auto;
+    margin: 1em auto;
+    display:block;
+}
+#main-image-background{
+    position:absolute;
+    left:0;
+    z-index:-1;
+    background-image:url("../res/photos/carousel_1.jpg");
+    background-size:contain;
+    filter:grayscale(100%) blur(5px);
+    height:100%;
+    width:100%;
+}
+.about-section > img{
+    width:30vw;
+    height:auto;
+    float:right;
+}
+#who-we-are > img{
+    float:right;
+    margin: 1em;
+}
+hr{
+    margin: 1em 0;
+}
+@media screen and (min-width: 950px) {
+    article{
+        margin: 1em;
+        padding:1em;
+        background-color: rgba(0, 0, 0, 0.13);
+        border-radius:0.5em;
+    }
+}
