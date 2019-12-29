@@ -24,6 +24,8 @@ This guide is intended for anyone maintaining the site that might not have any e
       - [roster.html (Roster Page)](#rosterhtml-roster-page)
       - [booking.html (Contact Page)](#bookinghtml-contact-page)
       - [concert.html (List of Past Concerts)](#concerthtml-list-of-past-concerts)
+      - [history.html (Taiko History Page)](#historyhtml-taiko-history-page)
+      - [performances.html (Upcoming Gig Calendar)](#performanceshtml-upcoming-gig-calendar)
       - [comingSoon.html (Placeholder Page)](#comingsoonhtml-placeholder-page)
     - [Deploying the Website](#deploying-the-website)
 
@@ -63,6 +65,8 @@ Each HTML file corresponds to a page of the website. Here's a break down of each
 | media.html      | Collection of videos                          |   |   |   |
 | roster.html     | Current Asa members                           |   |   |   |
 | booking.html    | Contact information                           |   |   |   |
+| history.html    | Taiko history page                            |   |   |   |
+| performances.html | Google calendar of upcoming gigs            |   |   |   |
 | concert.html    | Concert information                           |   |   |   |
 | comingSoon.html | Placeholder for pages I haven't made yet lol  |   |   |   |
 
@@ -193,10 +197,29 @@ The list of concerts is found in the \<section\> element with the id of "concert
 
 To add a concert, just copy and paste one of the \<section\> elements from a previous concert, and change the text and images. There is a folder within /res/photos called "concert-posters" that you can store the concert poster image. The image "mystery_concert.png" is used as a placeholder for the upcoming concerts. 
 
+#### history.html (Taiko History Page)
+This page is in the same format as the about.html page. Refer <a href="#abouthtml-about-page">above</a>. 
+
+#### performances.html (Upcoming Gig Calendar)
+Not much to edit here from the HTML side. Any events that get added to the gigs google calendar should automatically show up here. 
+
 #### comingSoon.html (Placeholder Page)
 This page is just a placeholder for unfinished pages. You probably don't need to edit this page. 
 
 ## Deploying the Website
-After editing the website, it's now time to make you changes public!
-TODO detail process for deploying
-https://ucsdservicedesk.service-now.com/its?id=kb_article_view&sysparm_article=KB0030548&sys_kb_id=a7d72b1bdbc67bc09736f35aaf961975
+After editing the website, it's now time to make you changes public! In order to update the live version of the website, you will need to access the ACS web server and upload your files there. Basic instructions can be found <a href="https://ucsdservicedesk.service-now.com/its?id=kb_article_view&sysparm_article=KB0030548&sys_kb_id=a7d72b1bdbc67bc09736f35aaf961975">here</a>.
+
+Though you don't have to do this, it's <b>strongly</b> recommended that you make a back up of your work by copying the entirety of the Asayake-website folder and saving it in a different folder before you send the files over. That way, if you somehow end up messing up the files on both the web server and in your local folder, you still have a back up of your changes. 
+
+### Windows 
+If you have a Windows computer, you will need to install PuTTY in order to access ACS web server. 
+
+### Mac OS
+To send your files to the ACS web server, you will have to do is use SCP, which should already be installed by default. Open the terminal in VS Code by clicking on "Terminal > New Terminal" in the top menu. A new cell should open up at the bottom of the window. in the terminal, navigate to the Asayake-website directory using the "cd" command. For example, if Asayake-website is located in "/Users/AsayakeTaiko/Documents/Asayake-website", then the command would be: <br><br>
+ cd /Users/AsayakeTaiko/Documents/Asayake-website
+ <br><br>
+To check if you are in the correct directory, the command "pwd" will show you which directory you are currently in. <br>
+Once you are in the Asayake-website directory, use scp command to upload your files. The command is: <br><br>
+ scp -r * taiko@acsweb.ucsd.edu:~taiko/public_html
+<br><br>
+
