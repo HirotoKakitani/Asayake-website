@@ -209,17 +209,29 @@ This page is just a placeholder for unfinished pages. You probably don't need to
 ## Deploying the Website
 After editing the website, it's now time to make you changes public! In order to update the live version of the website, you will need to access the ACS web server and upload your files there. Basic instructions can be found <a href="https://ucsdservicedesk.service-now.com/its?id=kb_article_view&sysparm_article=KB0030548&sys_kb_id=a7d72b1bdbc67bc09736f35aaf961975">here</a>.
 
+### Backing Up Files
 Though you don't have to do this, it's <b>strongly</b> recommended that you make a back up of your work by copying the entirety of the Asayake-website folder and saving it in a different folder before you send the files over. That way, if you somehow end up messing up the files on both the web server and in your local folder, you still have a back up of your changes. 
 
-### Windows 
-If you have a Windows computer, you will need to install PuTTY in order to access ACS web server. 
+### Uploading Files
+#### Windows Specific Instructions  
+If you are working on a Windows machine, you will need to first download <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"> PuTTY</a>. When installing PuTTY, make sure the "Put install directory on PATH for command prompts" option is enabled:<br><br>
+<img src="./res/readme-images/putty_cap.PNG"></img><br><br>
+<b>End of Windows specific instructions</b><br><br>
+To send your files to the ACS web server, you will have to use SCP for Macs, PSCP for Windows. SCP should be installed by default on Macs. 
+<ol>
+  <li>Open the terminal in VS Code by clicking on "Terminal > New Terminal" in the top menu. A new command line cell should open up at the bottom of the window.</li>
+  <img src="./res/readme-images/vscode_terminal.PNG"></img><br><br>
 
-### Mac OS
-To send your files to the ACS web server, you will have to do is use SCP, which should already be installed by default. Open the terminal in VS Code by clicking on "Terminal > New Terminal" in the top menu. A new cell should open up at the bottom of the window. in the terminal, navigate to the Asayake-website directory using the "cd" command. For example, if Asayake-website is located in "/Users/AsayakeTaiko/Documents/Asayake-website", then the command would be: <br><br>
- cd /Users/AsayakeTaiko/Documents/Asayake-website
- <br><br>
-To check if you are in the correct directory, the command "pwd" will show you which directory you are currently in. <br>
-Once you are in the Asayake-website directory, use scp command to upload your files. The command is: <br><br>
- scp -r * taiko@acsweb.ucsd.edu:~taiko/public_html
-<br><br>
+  <li>Check your current directory. On Mac, type "pwd", on Windows type "cd" into the terminal. If the command returns the file path to the Asayake-website folder, you are good to go.
+    <ul><li>If you are not in the correct directory, navigate to the Asayake-website directory using the "cd" command. For example, if your Asayake-website is located in "/Users/AsayakeTaiko/Documents/Asayake-website", then the command would be: <br>
+ cd /Users/AsayakeTaiko/Documents/Asayake-website</li></ul></li>
+ <li>Once you are in the Asayake-website directory, we can upload your files. On Mac, the command is: <br><br>
+ scp -r * taiko@acsweb.ucsd.edu:~taiko/public_html<br><br>
+ and on Windows, the command is: <br><br>
+ pscp -r * taiko@acsweb.ucsd.edu:"public_html"<br><br>
+ Notice the quotes around "public_html" when doing it on Windows, that's really important.
 
+</li>
+</ol>
+
+You will be prompted to enter Asa's ACS account password. After that, the files should be uploaded, and your changes should be reflected in the live website http://acsweb.ucsd.edu/~taiko/. And you're done! 🥳
