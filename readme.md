@@ -40,7 +40,7 @@ If you don't have a local copy of the website's code already, you can download i
 Once the download finishes, be sure to unzip the file.<br><br><b>You won't need to do this every time you want to make a change to the website. As long as you keep a copy of these files somewhere on your computer, you should be good.</b>
 
 ### Getting a Text Editor
-You'll need some kind of code text editor to make any changes to the website. If you don't have one, an easy one to use is <a href="https://code.visualstudio.com/">Visual Studio Code</a>. Go ahead and download the latest stable version. <b>For the rest of this document, I'll assume you're using VS Code. If you're using some other editor, I'm assuming you can figure out how to do the things described here.</b> <br><br>
+You'll need some kind of code text editor to make any changes to the website. If you don't have one, an easy one to use is <a href="https://code.visualstudio.com/">Visual Studio Code</a>. Go ahead and download the latest stable version. <b>For the rest of this document, I'll assume you're using VS Code. If you're using some other editor, I'll assume you can figure out how to do the things described here.</b> <br><br>
 After you have installed VS Code, you'll need to install a plugin to make making editing a little easier. Once VS Code is open, click the "Extensions" menu on the left side of the window. There should be a search bar at the top. Search for "Live Server" and install it.
 
 <img src="./res/readme-images/vscode_liveserver.PNG"></img>
@@ -80,13 +80,13 @@ Once you have the <a href="#opening-the-code-in-the-editor">"Asayake-website" fo
 
 <img src="./res/readme-images/vscode_index.PNG"></img>
 
-Now that you have the source code open, you'll probably want to see how the page will actually look in a browser. This is where the Live Server plugin comes into play. Live server lets you preview what the page will look like. On the bottom right corner, there should be a button that says "Go Live". If you don't see it, make sure you have installed the <a href="#getting-a-text-editor">Live Server plugin</a>. 
+Now that you have the source code open, you'll probably want to see how the page will actually look in a browser. This is where the Live Server plugin comes into play. Live Server lets you preview what the page will look like in a web browser. On the bottom right corner, there should be a button that says "Go Live". If you don't see it, make sure you have installed the <a href="#getting-a-text-editor">Live Server plugin</a>. 
 
 <img src="./res/readme-images/vscode_golive.PNG"></img>
 
 This should automatically open up your default browser to display the opened HTML file. **It's recommended that you use Google Chrome or Firefox when making any changes.**
 
-If it doesn't automatically open up your browser, open your browser and go to "http://127.0.0.1:5500/".
+If it doesn't automatically open up your browser, open your browser and go to http://127.0.0.1:5500/.
 
 Whenever you save any changes to a page's html file, Live Server will automatically reload the preview of the page to reflect the new changes. 
 
@@ -100,11 +100,11 @@ HTML is a way to structure elements on to a web page. Basically, every image, pa
 
 The "\<h1\>" tag defines a header on the web page. Elements begin with an opening tag ("\<h1\>"), end with a closing tag ("\<\/h1\>"), and the content of the elements are found in between (The text "Asayake Taiko"). Closing tags will always have a forward slash "/" before the element name. The names of the opening tags and the closing tags must match, or else it won't be valid HTML.
 
-You can also embed some additional information about the element in the opening tag. In index.html, you'll see a bunch of "img" tags that look a little different: 
+You can also embed some additional information about the element in the opening tag. In index.html, you'll see a bunch of "img" tags that look like this: 
 
 <img src="./res/readme-images/vscode_img.PNG"></img>
 
-As you can see, "src" and "alt" are being assigned values in the opening tag. These are called attributes- they further specify things about an element. For example, defining just an "img" tag like this: 
+"src" and "alt" are being assigned values in the opening tag. These are called attributes- they further specify things about an element. For example, defining just an "img" tag like this: 
 
 \<img\>\</img\>
 
@@ -156,7 +156,7 @@ In \<asayake-carousel\>, you'll see one image that has an additional attribute "
 #### about.html (About Page)
 Everything you'll want to change in the about page is found in the \<article\> tag. If all you want to do is change some of the text or images in place, then I've explained how to do that <a href="#changing-text">here</a>. 
 
-If you want to add additional images to the page, or add more text sections to the page, that will require adding more elements to the page. If you feel like you can figure it out, don't hesitate to ask me any questions :) Otherwise, let me know and I can make the changes. 
+If you want to add additional images to the page, or add more text sections to the page, that will require adding more elements to the page. If you have any questions about how to do that, don't hesitate to ask me any questions :)  
 
 The HTML follows the flow of the page. The big group photo at the top of the page is found inside of the \<div\> with the id set to "main-image-cont" (top of \<article\>). 
 
@@ -184,7 +184,7 @@ As you can see, there are a lot of things that go inside of \<asayake-card\>.
 
 There are two images: one with the "slot" attribute set to "memberImage" and another with the slot attribute set to "altImage". The "memberImage" corresponds to the main image of the member, and "altImage" corresponds to the funny picture that appears when the user hovers over the main image. All images of the members should be placed in the "res/photos/roster_images" folder. <br><br>
 The \<span\> corresponds to the name of the member. <br><br>
-There are four \<p\> elements with the slot attributes "major", "year", "favSong", and "quote". Each one corresponds to a different entry for the member.<br><br>
+There are four \<p\> elements with the slot attributes "major", "year", "favSong", and "quote", respectively. Each one corresponds to a different entry for the member.<br><br>
 The easiest way to add new member would be to just copy and paste a previous member's \<asayake-card\> and change the text and image URLs.
 
 #### booking.html (Contact Page)
@@ -195,7 +195,7 @@ The list of concerts is found in the \<section\> element with the id of "concert
 
 <img src="./res/readme-images/vscode_concert.PNG"></img>
 
-To add a concert, just copy and paste one of the \<section\> elements from a previous concert, and change the text and images. There is a folder within /res/photos called "concert-posters" that you can store the concert poster image. The image "mystery_concert.png" is used as a placeholder for the upcoming concerts. 
+To add a concert, just copy and paste one of the \<section\> elements from a previous concert, and change the text and images. There is a folder within /res/photos called "concert-posters" that you can store the concert poster image. The image "mystery_concert.png" is used as a placeholder for upcoming concerts. 
 
 #### history.html (Taiko History Page)
 This page is in the same format as the about.html page. Refer <a href="#abouthtml-about-page">above</a>. 
@@ -217,9 +217,9 @@ Though you don't have to do this, it's <b>strongly</b> recommended that you make
 If you are working on a Windows machine, you will need to first download <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"> PuTTY</a>. When installing PuTTY, make sure the "Put install directory on PATH for command prompts" option is enabled:<br><br>
 <img src="./res/readme-images/putty_cap.PNG"></img><br><br>
 <b>End of Windows specific instructions</b><br><br>
-To send your files to the ACS web server, you will have to use SCP for Macs, PSCP for Windows. SCP should be installed by default on Macs. 
+To send your files to the ACS web server, you will have to use SCP for Macs, or PSCP for Windows. SCP should be installed by default on Macs, and PSCP is included with PuTTY. 
 <ol>
-  <li>Open the terminal in VS Code by clicking on "Terminal > New Terminal" in the top menu. A new command line cell should open up at the bottom of the window.</li>
+  <li>Open the terminal in VS Code by clicking on "Terminal > New Terminal" in the top menu. A new command line cell should open up at the bottom of the window (it might not necessarily look exactly like the one shown below). </li>
   <img src="./res/readme-images/vscode_terminal.PNG"></img><br><br>
 
   <li>Check your current directory. On Mac, type "pwd", on Windows type "cd" into the terminal. If the command returns the file path to the Asayake-website folder, you are good to go.
@@ -229,7 +229,7 @@ To send your files to the ACS web server, you will have to use SCP for Macs, PSC
  scp -r * taiko@acsweb.ucsd.edu:~taiko/public_html<br><br>
  and on Windows, the command is: <br><br>
  pscp -r * taiko@acsweb.ucsd.edu:"public_html"<br><br>
- Notice the quotes around "public_html" when doing it on Windows, that's really important.
+ When working on Windows, the quotes around "public_html" are really important, so make sure you have those.
 
 </li>
 </ol>
