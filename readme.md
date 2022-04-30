@@ -187,6 +187,8 @@ The \<span\> corresponds to the name of the member. <br><br>
 There are four \<p\> elements with the slot attributes "major", "year", "favSong", and "quote", respectively. Each one corresponds to a different entry for the member.<br><br>
 The easiest way to add new member would be to just copy and paste a previous member's \<asayake-card\> and change the text and image URLs.
 
+**Sidenote:** Do not upload images into roster_images folder, use roster_images2 instead.
+
 #### booking.html (Contact Page)
 Unless Asa's email or social media changes, you probably don't need to change this page. But in case it does, all you have to do is change the URL in the "href" attribute of the corresponding \<a\> (anchor) element. 
 
